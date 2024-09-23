@@ -1,0 +1,30 @@
+.carousel-indicators {
+  bottom: -43px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  height: 100%;
+}
+
+.carousel-inner {
+  background: #212529 !important;
+}
+
+.img-alterada {
+  width: 100% !important;
+  height: 50% !important;
+  object-fit: fill;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 400px) {
+  .hidden {
+    display: none !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .img-alterada {
+    width: 100% !important;
+  }
+}

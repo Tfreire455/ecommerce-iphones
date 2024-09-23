@@ -1,0 +1,16 @@
+.Accordion {
+  width: 100%;
+}
+
+.accordion-item:last-of-type > .accordion-header .accordion-button.collapsed {
+  background-color: #212529 !important;
+  color: white;
+}
+
+.accordion-button::after {
+  filter: brightness(10);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #5f7081 !important;
+}
