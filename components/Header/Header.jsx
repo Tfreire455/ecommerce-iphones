@@ -21,11 +21,7 @@ const Logo = styled.img`
 
 function Header() {
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      className="bg-dark w-100"
-    >
+    <Navbar collapseOnSelect expand="lg" className="bg-dark w-100">
       <Container className="container-flex navbar">
         <Navbar.Brand href="/home">
           <Logo src={logo}></Logo>
@@ -36,7 +32,7 @@ function Header() {
         />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto navbar">
-            <Nav.Link href="/home" className="custom-link">
+            <Nav.Link to="/home" className="custom-link">
               INÍCIO
             </Nav.Link>
             <NavDropdown
@@ -44,7 +40,7 @@ function Header() {
               id="collapsible-nav-dropdown"
               className="custom-dropdown-toggle custom-link   "
             >
-              <NavDropdown.Item href="/produtos">iPhones</NavDropdown.Item>
+              <NavDropdown.Item to="/produtos">iPhones</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

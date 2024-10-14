@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/produtos" element={<Produtos />} />
         <Route path="/produto/:id" element={<ProdutoDetalhe />} />
