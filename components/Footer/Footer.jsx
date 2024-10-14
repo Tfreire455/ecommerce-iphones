@@ -36,7 +36,7 @@ const Footer = () => {
             <Titulo className="titulo">Siga-nos</Titulo>
             <div className="social-icons">
               <AContainerLink
-                href="https://www.instagram.com/_claricel/"
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -47,14 +47,15 @@ const Footer = () => {
           </div>
           <div className="footer-section">
             <Titulo className="titulo">Contato</Titulo>
-            <PFooter>Email: contato@claricel.com</PFooter>
-            <PFooter>Telefone: (11) 99257-7103</PFooter>
+            <PFooter>Email: iphones@soline.com</PFooter>
+            <PFooter>(Email ilustrativo)</PFooter>
+            <PFooter>Telefone: (11) 996787679</PFooter>
           </div>
         </div>
       </div>
       <br />
       <div className="footer-bottom">
-        <p>&copy; 2024 Claricel. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Soline Iphones. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

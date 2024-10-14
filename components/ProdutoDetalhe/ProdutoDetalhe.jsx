@@ -136,7 +136,7 @@ const ProdutoDetalhe = () => {
   }, [id]);
 
   const handleWhatsAppRedirect = (nome, preco) => {
-    const numero = "5511992577103"; // Número de WhatsApp com código do país e DDD
+    const numero = "5511996787679"; // Número de WhatsApp com código do país e DDD
     const mensagem = `Gostaria de saber mais sobre ${nome}, que está com o valor de ${preco}`;
     const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(
       mensagem

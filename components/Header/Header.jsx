@@ -15,7 +15,7 @@ import "./Header.css";
 import logo from "../../assets/1.png";
 
 const Logo = styled.img`
-  width: 150px;
+  width: 200px;
   padding: 0 20px;
 `;
 
