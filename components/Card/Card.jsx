@@ -4,8 +4,10 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ScrollReveal from "scrollreveal";
-
+import axios from "axios";
 import "./card.css";
+
+const api = "https://ecommerce-iphones-api.onrender.com";
 
 const ContainerCard = styled.div`
   display: flex;
@@ -16,20 +18,35 @@ const ContainerCard = styled.div`
   flex-wrap: wrap;
 `;
 
+const StyledCard = styled(Card)`
+  width: 14rem;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
 function CardProduto() {
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5173/apiProdutos.json")
-      .then((response) => response.json())
-      .then((data) => setProdutos(data));
+    const fetchProdutos = async () => {
+      try {
+        const response = await axios.get(`${api}/api/produtos`);
+        setProdutos(response.data);
+      } catch (error) {
+        console.error("Erro ao carregar produtos:", error);
+      }
+    };
+
+    fetchProdutos();
   }, []);
 
   const MaisProcurados = produtos.slice(0, 5);
 
   useEffect(() => {
     const sr = ScrollReveal();
-
     sr.reveal(".hover-effect", {
       duration: 2000,
     });
@@ -46,16 +63,15 @@ function CardProduto() {
 
   return (
     <ContainerCard>
-      {MaisProcurados.map((produto, index) => (
-        <Card
-          key={index}
-          style={{ width: "14rem" }}
+      {MaisProcurados.map((produto) => (
+        <StyledCard
+          key={produto.Iphone.id} // Usando ID do produto como chave
           className="hover-effect hover-gradient"
         >
           <Link to={`/produto/${produto.Iphone.id}`}>
             <Card.Img
               variant="top"
-              src={produto.Iphone.foto}
+              src={`${api}${produto.Iphone.foto}`}
               className="img-card"
             />
             <Card.Body>
@@ -63,7 +79,7 @@ function CardProduto() {
               <Card.Text>{produto.Iphone.preco}</Card.Text>
               <br />
               <Button
-                className="btn-messsage"
+                className="btn-message" // Corrigido o nome da classe
                 variant="primary"
                 onClick={() =>
                   handleWhatsAppRedirect(
@@ -76,7 +92,7 @@ function CardProduto() {
               </Button>
             </Card.Body>
           </Link>
-        </Card>
+        </StyledCard>
       ))}
     </ContainerCard>
   );
